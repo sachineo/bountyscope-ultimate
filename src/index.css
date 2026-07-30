@@ -527,6 +527,33 @@ tr.selected td { background: var(--bg-active); }
 .mission-strip__status { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; color: var(--green); }
 .mission-strip__status i { width: 5px; height: 5px; border-radius: 50%; background: var(--green); box-shadow: 0 0 7px var(--green); }
 
+.web-demo-banner {
+  display: flex;
+  min-height: 31px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 18px;
+  border-bottom: 1px solid rgba(255, 209, 102, .24);
+  background: linear-gradient(90deg, rgba(255, 209, 102, .09), rgba(155, 123, 255, .06), rgba(0, 245, 212, .04));
+  color: var(--text-secondary);
+  font: 500 .64rem var(--font-mono);
+  letter-spacing: .025em;
+}
+.web-demo-banner strong { color: var(--amber); letter-spacing: .08em; }
+.web-demo-banner a {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 5px;
+  color: var(--cyan);
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-decoration: none;
+}
+.web-demo-banner a:hover { color: var(--green); text-shadow: 0 0 10px rgba(0, 245, 212, .5); }
+
 /* ── Sidebar ─────────────────────────────────────────────────────────────── */
 .sidebar {
   position: relative;

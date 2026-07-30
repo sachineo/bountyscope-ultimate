@@ -13,7 +13,7 @@
 
 A local-first desktop workbench that brings authorized security research, attack-surface mapping, testing labs, evidence, findings, and reporting into one focused interface.
 
-[Features](#features) • [Installation](#installation) • [How to use](#how-to-use) • [Architecture](#architecture) • [Contributing](#contributing)
+[🌐 Live Web Demo](https://sachineo.github.io/bountyscope-ultimate/) • [Features](#features) • [Installation](#installation) • [How to use](#how-to-use) • [Architecture](#architecture) • [Contributing](#contributing)
 
 </div>
 
@@ -21,6 +21,9 @@ A local-first desktop workbench that brings authorized security research, attack
 
 > [!IMPORTANT]
 > BountyScope is intended only for systems you own or have explicit written permission to test. It is not designed for unauthorized access or activity.
+
+> [!NOTE]
+> The [browser demo](https://sachineo.github.io/bountyscope-ultimate/) uses safe sample data and is designed for instant exploration. Install the desktop edition for the local SQLite database, evidence file workflows, and live HTTP tooling.
 
 ## Why BountyScope?
 

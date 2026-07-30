@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { Activity, Command, Radio, Search, ShieldCheck } from 'lucide-react';
+import { Activity, Command, ExternalLink, Radio, Search, ShieldCheck } from 'lucide-react';
+import { isWebDemo } from '../lib/db';
 import Sidebar from './Sidebar';
 import Dashboard from '../pages/Dashboard';
 import Projects from '../pages/Projects';
@@ -117,8 +118,8 @@ export default function AppShell() {
           </button>
 
           <div className="command-bar__telemetry">
-            <span className="telemetry-item"><Radio size={12} /> LOCAL</span>
-            <span className="telemetry-item telemetry-item--safe"><ShieldCheck size={12} /> VAULTED</span>
+            <span className="telemetry-item"><Radio size={12} /> {isWebDemo ? 'WEB DEMO' : 'LOCAL'}</span>
+            <span className="telemetry-item telemetry-item--safe"><ShieldCheck size={12} /> {isWebDemo ? 'SAMPLE DATA' : 'VAULTED'}</span>
             <span className="telemetry-clock">{now.toLocaleTimeString([], { hour12: false })}</span>
           </div>
         </header>
@@ -128,6 +129,15 @@ export default function AppShell() {
           <span className="mission-strip__name">{activeProject?.name || 'No project selected'}</span>
           <span className="mission-strip__status"><i /> SYSTEM READY</span>
         </div>
+
+        {isWebDemo && (
+          <div className="web-demo-banner">
+            <span><strong>INTERACTIVE WEB DEMO</strong> — explore safely with sample data. Local database, evidence files, and live HTTP tools require the desktop edition.</span>
+            <a href="https://github.com/sachineo/bountyscope-ultimate#installation" target="_blank" rel="noreferrer">
+              GET DESKTOP <ExternalLink size={11} />
+            </a>
+          </div>
+        )}
 
         <main className="app-content">
           {PAGE_MAP[activeTab] || <Dashboard />}
