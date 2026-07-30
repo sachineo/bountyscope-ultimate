@@ -1,0 +1,82 @@
+{
+  "name": "bountyscope-ultimate",
+  "version": "1.0.0",
+  "description": "BountyScope Ultimate — Offensive security operations console developed by Sachin and skoolic.com",
+  "author": "Sachin — skoolic.com",
+  "homepage": "https://skoolic.com",
+  "private": true,
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.node.json && vite build && electron-builder",
+    "build:vite": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron dist-electron/main.js",
+    "compile": "tsc -p tsconfig.electron.json",
+    "start": "vite",
+    "launch": "npm run build:vite && electron dist-electron/main.js"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-dialog": "^1.1.7",
+    "@radix-ui/react-dropdown-menu": "^2.1.7",
+    "@radix-ui/react-label": "^2.1.4",
+    "@radix-ui/react-progress": "^1.1.4",
+    "@radix-ui/react-scroll-area": "^1.2.9",
+    "@radix-ui/react-select": "^2.2.0",
+    "@radix-ui/react-separator": "^1.1.4",
+    "@radix-ui/react-slider": "^1.3.5",
+    "@radix-ui/react-switch": "^1.2.5",
+    "@radix-ui/react-tabs": "^1.1.9",
+    "@radix-ui/react-tooltip": "^1.2.7",
+    "axios": "^1.10.0",
+    "better-sqlite3": "^11.10.0",
+    "crypto-js": "^4.2.0",
+    "date-fns": "^4.1.0",
+    "highlight.js": "^11.11.1",
+    "js-base64": "^3.7.7",
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-dropzone": "^14.3.8",
+    "react-resizable-panels": "^2.1.9",
+    "recharts": "^2.15.4",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^22.15.34",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "6.0.5",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "43.2.0",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.8.3",
+    "vite": "8.1.5",
+    "vite-plugin-electron": "1.1.0",
+    "vite-plugin-electron-renderer": "1.0.0",
+    "wait-on": "^8.0.4"
+  },
+  "build": {
+    "appId": "com.sachin.bountyscope-ultimate",
+    "productName": "BountyScope Ultimate",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
